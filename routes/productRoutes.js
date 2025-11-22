@@ -11,4 +11,5 @@ router.post("/create", upload.array("images", 4), createProduct);
 // Fetch all products
 router.get("/all", getProducts);
 
+
 module.exports = router;
