@@ -58,6 +58,9 @@
     </form>
 
     <pre id="result"></pre>
+ <h1>Cart Items</h1>
+
+  <div id="cart"></div>
 
     <script>
         document.getElementById("productForm").addEventListener("submit", async (e) => {
@@ -97,6 +100,34 @@
             const result = await response.json();
             document.getElementById("result").innerText = JSON.stringify(result, null, 2);
         });
+    async function loadCart() {
+      const res = await fetch('/api/cart');
+      const items = await res.json();
+
+      let html = "";
+
+      items.forEach(item => {
+        html += `
+          <div style="border:1px solid #ccc; padding:10px; margin:10px;">
+            <h3>${item.productId.name}</h3>
+            <p>Price: ₹${item.productId.offerPrice}</p>
+            <p>Quantity: ${item.quantity}</p>
+            <img src="${item.productId.images[0]}" width="100" />
+            <br><br>
+            <button onclick="removeItem('${item._id}')">Remove</button>
+          </div>
+        `;
+      });
+
+      document.getElementById("cart").innerHTML = html;
+    }
+
+    async function removeItem(id) {
+      await fetch(`/api/cart/${id}`, { method: "DELETE" });
+      loadCart();
+    }
+
+    loadCart();
     </script>
 
 </body>

@@ -26,6 +26,32 @@ app.get("/", (req, res) => {
 
 app.use("/api/auth", authRoutes);
 
+app.post("/login", async (req, res) => {
+  try {
+    const { mobile, password } = req.body;
+
+    const user = await User.findOne({ mobile });
+
+    if (!user) {
+      return res.json({ success: false, message: "Mobile not found" });
+    }
+
+    if (user.password !== password) {
+      return res.json({ success: false, message: "Wrong password" });
+    }
+
+    return res.json({ success: true, message: "Login successful" });
+
+  } catch (err) {
+    return res.json({ success: false, message: "Server error" });
+  }
+});
+
+const cartRoutes = require("./routes/cartRoutes");
+app.use("/api/cart", cartRoutes);
+
+
 // Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
