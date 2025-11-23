@@ -10,6 +10,14 @@ const CartSchema = new mongoose.Schema({
     type: Number,
     default: 1,
   },
+  tempUserId: {
+    type: String,
+    required: true,
+  },
+  userId: {
+    type: String, // when user logs in
+    default: null,
+  },
   createdAt: {
     type: Date,
     default: Date.now,
