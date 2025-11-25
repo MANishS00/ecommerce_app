@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Products</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<h1>Upload Product</h1>
+
+<div class="card">
+  <label>Name</label>
+  <input id="p_name" type="text">
+
+  <label>Description</label>
+  <textarea id="p_desc"></textarea>
+
+  <label>Rating (1-5)</label>
+  <input id="p_rating" type="number" min="1" max="5" value="5">
+
+  <label>Total Price</label>
+  <input id="p_total" type="number">
+
+  <label>Offer Price</label>
+  <input id="p_offer" type="number">
+
+  <h3>Select Images (1–4)</h3>
+  <input id="file1" type="file" accept="image/*">
+  <input id="file2" type="file" accept="image/*">
+  <input id="file3" type="file" accept="image/*">
+  <input id="file4" type="file" accept="image/*">
+
+  <button onclick="uploadProduct()">Upload Product</button>
+
+  <pre id="productResult"></pre>
+</div>
+
+<hr>
+
+<h2>Fetch All Products</h2>
+<button onclick="fetchProducts()">Fetch</button>
+<pre id="fetchProductsPre"></pre>
+
+<script src="js/common.js"></script>
+<script src="js/products.js"></script>
+
+</body>
+</html>

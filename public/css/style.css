@@ -1,0 +1,45 @@
+body {
+  font-family: Arial;
+  padding: 20px;
+}
+
+.card {
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+button {
+  padding: 10px 14px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.nav-link {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 20px;
+  text-decoration: none;
+}
+pre {
+  background: #111;
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  max-height: 300px;
+  overflow: auto;
+}

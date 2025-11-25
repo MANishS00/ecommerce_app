@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Authentication</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<h1>Authentication</h1>
+
+<div class="card">
+  <h2>Signup</h2>
+  <label>Mobile</label>
+  <input id="s_mobile">
+  <label>Password</label>
+  <input id="s_pass" type="password">
+  <button onclick="signup()">Signup</button>
+  <pre id="signupResult"></pre>
+</div>
+
+<div class="card">
+  <h2>Login</h2>
+  <label>Mobile</label>
+  <input id="l_mobile">
+  <label>Password</label>
+  <input id="l_pass" type="password">
+  <button onclick="login()">Login</button>
+  <button onclick="logout()">Logout</button>
+  <pre id="loginResult"></pre>
+</div>
+
+<div class="card">
+  <h2>Forget Password</h2>
+  <label>Mobile</label>
+  <input id="f_mobile">
+  <button onclick="forgetPass()">Get Password</button>
+  <pre id="forgetResult"></pre>
+</div>
+
+<script src="js/common.js"></script>
+<script src="js/auth.js"></script>
+
+</body>
+</html>
