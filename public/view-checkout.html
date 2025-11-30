@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout Records</title>
+
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        h1 { margin-bottom: 10px; }
+        button {
+            padding: 10px 16px;
+            background: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        th {
+            background: #333;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background: #f3f3f3;
+        }
+        .no-data {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #444;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Checkout Records</h1>
+
+    <button onclick="fetchCheckout()">Fetch Checkout Data</button>
+
+    <div id="result"></div>
+
+    <script src="js/checkout.js"></script>
+
+</body>
+</html>
